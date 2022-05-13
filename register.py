@@ -22,17 +22,21 @@ def userGetReg(userName,userPasswd):
 # Muestra por pantalla el contenido del archivo.
 def readData():
     with open('userData.dat','r') as userData:
-        print('UserName,Hash:\n\n'+userData.read())
+        return ('UserName,Hash:\n\n'+userData.read())
+
+# Limpia la consola.
+def clean():
+    os.system('cls||clear')
 
 # Llama a las funciones.
 if __name__ == "__main__":
-    os.system('cls||clear')
+    clean()
     print('\n'+ '='*35 + ' REGISTER ' + '='*35 + '\n')
     userName = input('Introduce nombre de usuario: ')
     userPasswd = getpass.getpass('Introduce una contraseña: ')
     userGetReg(userName,userPasswd)
-    os.system('cls||clear')
+    clean()
     print('\n' + '='*34 + ' USERS DATA ' + '='*34 + '\n')
     print(readData())
     input("\nPulsa 'Enter' para continuar...\n")
-    os.system('cls||clear')
+    clean()
